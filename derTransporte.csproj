@@ -73,6 +73,12 @@
     <Folder Include="src\modules\drivers\Infrastructure\entity\" />
     <Folder Include="src\modules\drivers\Infrastructure\repository\" />
     <Folder Include="src\modules\drivers\UI\" />
+    <Folder Include="src\modules\loads\" />
+    <Folder Include="src\modules\loads\Application\" />
+    <Folder Include="src\modules\loads\Domain\" />
+    <Folder Include="src\modules\loads\Infrastructure\" />
+    <Folder Include="src\modules\loads\Infrastructure\entity\" />
+    <Folder Include="src\modules\loads\Infrastructure\repository\" />
     <Folder Include="src\modules\persons\" />
     <Folder Include="src\modules\persons\Application\" />
     <Folder Include="src\modules\persons\Application\interfaces\" />
