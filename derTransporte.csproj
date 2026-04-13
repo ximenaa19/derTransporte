@@ -34,6 +34,10 @@
     <Folder Include="src\modules\countries\Infrastructure\entity\" />
     <Folder Include="src\modules\countries\Infrastructure\repository\" />
     <Folder Include="src\modules\countries\UI\" />
+    <Folder Include="src\modules\customers\" />
+    <Folder Include="src\modules\customers\Infrastructure\" />
+    <Folder Include="src\modules\customers\Infrastructure\entity\" />
+    <Folder Include="src\modules\customers\Infrastructure\repository\" />
     <Folder Include="src\modules\drivers\" />
     <Folder Include="src\modules\drivers\Application\" />
     <Folder Include="src\modules\drivers\Application\interfaces\" />
