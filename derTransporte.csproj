@@ -76,6 +76,7 @@
     <Folder Include="src\modules\countries\Infrastructure\entity\" />
     <Folder Include="src\modules\countries\Infrastructure\repository\" />
     <Folder Include="src\modules\countries\UI\" />
+    <Folder Include="src\modules\creditTransactions\Infrastructure\repository\" />
     <Folder Include="src\modules\creditWallet\Application\" />
     <Folder Include="src\modules\creditWallet\Domain\" />
     <Folder Include="src\modules\creditWallet\Infrastructure\repository\" />
@@ -156,6 +157,10 @@
     <Folder Include="src\modules\payments\Application\" />
     <Folder Include="src\modules\payments\Domain\" />
     <Folder Include="src\modules\payments\Infrastructure\repository\" />
+    <Folder Include="src\modules\personPlans\" />
+    <Folder Include="src\modules\personPlans\Infrastructure\" />
+    <Folder Include="src\modules\personPlans\Infrastructure\entity\" />
+    <Folder Include="src\modules\personPlans\Infrastructure\repository\" />
     <Folder Include="src\modules\persons\" />
     <Folder Include="src\modules\persons\Application\" />
     <Folder Include="src\modules\persons\Application\interfaces\" />
@@ -196,6 +201,10 @@
     <Folder Include="src\modules\stateOrRegions\Domain\repositories\" />
     <Folder Include="src\modules\stateOrRegions\Domain\valueObject\" />
     <Folder Include="src\modules\stateOrRegions\UI\" />
+    <Folder Include="src\modules\subscriptions\" />
+    <Folder Include="src\modules\subscriptions\Infrastructure\" />
+    <Folder Include="src\modules\subscriptions\Infrastructure\entity\" />
+    <Folder Include="src\modules\subscriptions\Infrastructure\repository\" />
     <Folder Include="src\modules\transportCompanies\" />
     <Folder Include="src\modules\transportCompanies\Application\" />
     <Folder Include="src\modules\transportCompanies\Application\interfaces\" />

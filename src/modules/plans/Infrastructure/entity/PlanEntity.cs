@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.personPlans.Infrastructure.entity;
 
 namespace derTransporte.src.modules.plans.Infrastructure.entity;
 
@@ -11,6 +12,6 @@ public class PlanEntity
         public bool IsActive { get; set; }              // BOOLEAN
  
         // Hijos
-        //public ICollection<PersonPlanEntity> PersonPlans { get; set; }= new List<PersonPlanEntity>();
+        public ICollection<PersonPlanEntity> PersonPlans { get; set; }= new List<PersonPlanEntity>();
 
 }

@@ -32,6 +32,9 @@ using derTransporte.src.modules.priceHistory.Infrastructure.entity;
 using derTransporte.src.modules.returnLoadSuggestions.Infrastructure.entity;
 using derTransporte.src.modules.tripStatusHistory.Infrastructure.entity;
 using derTransporte.src.modules.travelScale.Infrastructure.entity;
+using derTransporte.src.modules.creditTransactions.Infrastructure.entity;
+using derTransporte.src.modules.subscriptions.Infrastructure.entity;
+using derTransporte.src.modules.personPlans.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -72,6 +75,9 @@ public class AppDbContext : DbContext
     public DbSet<ReturnLoadSugEntity> ReturnLoadSug { get; set; } = null!;
     public DbSet<TripStatusHistoryEntity> TripStatusHistory { get; set; } = null!;
     public DbSet<TravelScaleEntity> TravelScale { get; set; } = null!;
+    public DbSet<CreditTransactionEntity> CreditTransaction { get; set; } = null!;
+    public DbSet<SubscriptionEntity> Subscription { get; set; } = null!;
+    public DbSet<PersonPlanEntity> PersonPlan { get; set; } = null!;
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

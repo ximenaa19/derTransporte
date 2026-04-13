@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.creditTransactions.Infrastructure.entity;
 using derTransporte.src.modules.payments.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
 using derTransporte.src.modules.transportCompanies.Infrastructure.entity;
@@ -18,7 +19,7 @@ public class CreditWalletEntity
         public transportCompanyEntity? Company { get; set; }
  
         // Hijos
-        //public ICollection<CreditTransactionEntity> Transactions { get; set; }
+        public ICollection<CreditTransactionEntity> Transactions { get; set; }= new List<CreditTransactionEntity>();
         public ICollection<PaymentEntity> Payments { get; set; }= new List<PaymentEntity>();
 
 }
