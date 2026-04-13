@@ -1,0 +1,31 @@
+using System;
+using derTransporte.src.modules.bids.Infrastructure.entity;
+using derTransporte.src.modules.drivers.Infrastructure.entity;
+using derTransporte.src.modules.loads.Infrastructure.entity;
+
+namespace derTransporte.src.modules.trips.Infrastructure.entity;
+
+public class TripEntity
+{
+    public Guid Id { get; set; }
+        public decimal FinalPrice { get; set; }          // DECIMAL
+        public string ManifestNumber { get; set; } = string.Empty;      // VARCHAR
+        public string TrackingToken { get; set; } = string.Empty;        // VARCHAR
+        public DateTime? StartTime { get; set; }         // TIMESTAMP - nullable
+        public DateTime? EndTime { get; set; }           // TIMESTAMP - nullable
+        public Guid LoadId { get; set; }                 // FK → loads
+        public Guid BidId { get; set; }                  // FK → bids
+        public Guid DriverId { get; set; }               // FK → drivers
+ 
+        // Navigation properties
+        public LoadEntity? Load { get; set; }
+        public BidEntity? Bid { get; set; }
+        public DriverEntity? Driver { get; set; }
+ 
+        // Hijos
+       /* public ICollection<TravelScaleEntity> TravelScales { get; set; }
+        public ICollection<TripStatusHistoryEntity> StatusHistory { get; set; }
+        public ICollection<TripAssignmentEntity> Assignments { get; set; }
+        public ICollection<RatingEntity> Ratings { get; set; }
+        public ICollection<DisputeEntity> Disputes { get; set; }*/
+}

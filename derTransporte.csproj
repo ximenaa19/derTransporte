@@ -121,6 +121,13 @@
     <Folder Include="src\modules\transportCompanies\Infrastructure\entity\" />
     <Folder Include="src\modules\transportCompanies\Infrastructure\repository\" />
     <Folder Include="src\modules\transportCompanies\UI\" />
+    <Folder Include="src\modules\trips\" />
+    <Folder Include="src\modules\trips\Application\" />
+    <Folder Include="src\modules\trips\Domain\" />
+    <Folder Include="src\modules\trips\Infrastructure\" />
+    <Folder Include="src\modules\trips\Infrastructure\entity\" />
+    <Folder Include="src\modules\trips\Infrastructure\repository\" />
+    <Folder Include="src\modules\trips\UI\" />
     <Folder Include="src\modules\vehicles\" />
     <Folder Include="src\modules\vehicles\Application\" />
     <Folder Include="src\modules\vehicles\Application\interfaces\" />
