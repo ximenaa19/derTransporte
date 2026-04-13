@@ -30,6 +30,8 @@ using derTransporte.src.modules.loadImages.Infrastructure.entity;
 using derTransporte.src.modules.loadStatusHistory.Infrastructure.entity;
 using derTransporte.src.modules.priceHistory.Infrastructure.entity;
 using derTransporte.src.modules.returnLoadSuggestions.Infrastructure.entity;
+using derTransporte.src.modules.tripStatusHistory.Infrastructure.entity;
+using derTransporte.src.modules.travelScale.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -68,6 +70,8 @@ public class AppDbContext : DbContext
     public DbSet<LoadStatusHistoryEntity> LoadStatusHistory { get; set; } = null!;
     public DbSet<PriceHistoryEntity> PriceHistory { get; set; } = null!;
     public DbSet<ReturnLoadSugEntity> ReturnLoadSug { get; set; } = null!;
+    public DbSet<TripStatusHistoryEntity> TripStatusHistory { get; set; } = null!;
+    public DbSet<TravelScaleEntity> TravelScale { get; set; } = null!;
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
