@@ -2,6 +2,9 @@ using System;
 using derTransporte.src.modules.bids.Infrastructure.entity;
 using derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity;
 using derTransporte.src.modules.customers.Infrastructure.entity;
+using derTransporte.src.modules.loadDetails.Infrastructure.entity;
+using derTransporte.src.modules.loadImages.Infrastructure.entity;
+using derTransporte.src.modules.loadStatusHistory.Infrastructure.entity;
 
 namespace derTransporte.src.modules.loads.Infrastructure.entity;
 
@@ -30,9 +33,9 @@ public class LoadEntity
         public CityOrMunicipalityEntity? DestinationCity { get; set; }
  
         // Hijos
-        //public LoadDetailsEntity LoadDetails { get; set; }
-        //public ICollection<LoadImageEntity> Images { get; set; }
-        //public ICollection<LoadStatusHistoryEntity> StatusHistory { get; set; }
+        public LoadDetailsEntity? LoadDetails { get; set; }
+        public ICollection<LoadImageEntity> Images { get; set; }= new List<LoadImageEntity>();
+        public ICollection<LoadStatusHistoryEntity> StatusHistory { get; set; }= new List<LoadStatusHistoryEntity>();
         public ICollection<BidEntity> Bids { get; set; }= new List<BidEntity>();
 
 }

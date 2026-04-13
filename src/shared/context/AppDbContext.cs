@@ -25,6 +25,11 @@ using derTransporte.src.modules.companyDocuments.Infrastructure.entity;
 using derTransporte.src.modules.documentCustomers.Infrastructure.entity;
 using derTransporte.src.modules.documentDrivers.Infrastructure.entity;
 using derTransporte.src.modules.documentVehicles.Infrastructure.entity;
+using derTransporte.src.modules.loadDetails.Infrastructure.entity;
+using derTransporte.src.modules.loadImages.Infrastructure.entity;
+using derTransporte.src.modules.loadStatusHistory.Infrastructure.entity;
+using derTransporte.src.modules.priceHistory.Infrastructure.entity;
+using derTransporte.src.modules.returnLoadSuggestions.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -58,6 +63,11 @@ public class AppDbContext : DbContext
     public DbSet<DocumentCustomerEntity> DocumentCustomer { get; set; } = null!;
     public DbSet<DocumentDriverEntity> DocumentDriver { get; set; } = null!;
     public DbSet<DocumentVehicleEntity> DocumentVehicle { get; set; } = null!;
+    public DbSet<LoadDetailsEntity> LoadDetails { get; set; } = null!;
+    public DbSet<LoadImageEntity> LoadImage { get; set; } = null!;
+    public DbSet<LoadStatusHistoryEntity> LoadStatusHistory { get; set; } = null!;
+    public DbSet<PriceHistoryEntity> PriceHistory { get; set; } = null!;
+    public DbSet<ReturnLoadSugEntity> ReturnLoadSug { get; set; } = null!;
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
