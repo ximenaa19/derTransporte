@@ -119,3 +119,4 @@ C:\Users\USUARIO\derTransporte\obj\Debug\net10.0\refint\derTransporte.dll
 C:\Users\USUARIO\derTransporte\obj\Debug\net10.0\derTransporte.pdb
 C:\Users\USUARIO\derTransporte\obj\Debug\net10.0\derTransporte.genruntimeconfig.cache
 C:\Users\USUARIO\derTransporte\obj\Debug\net10.0\ref\derTransporte.dll
+C:\Users\USUARIO\derTransporte\obj\Debug\net10.0\derTransporte.sourcelink.json

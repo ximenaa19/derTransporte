@@ -10,6 +10,20 @@
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\modules\" />
+    <Folder Include="src\modules\countries\" />
+    <Folder Include="src\modules\countries\Application\" />
+    <Folder Include="src\modules\countries\Application\intefaces\" />
+    <Folder Include="src\modules\countries\Application\services\" />
+    <Folder Include="src\modules\countries\Application\useCases\" />
+    <Folder Include="src\modules\countries\Domain\" />
+    <Folder Include="src\modules\countries\Domain\aggregate\" />
+    <Folder Include="src\modules\countries\Domain\repositories\" />
+    <Folder Include="src\modules\countries\Domain\valueObject\" />
+    <Folder Include="src\modules\countries\Infrastructure\" />
+    <Folder Include="src\modules\countries\Infrastructure\entity\" />
+    <Folder Include="src\modules\countries\Infrastructure\repository\" />
+    <Folder Include="src\modules\countries\UI\" />
+    <Folder Include="src\modules\stateOrRegions\" />
     <Folder Include="src\shared\" />
     <Folder Include="src\shared\configurations\" />
     <Folder Include="src\shared\context\" />
