@@ -8,6 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="src\modules\authCredentials\" />
+    <Folder Include="src\modules\authCredentials\Application\" />
+    <Folder Include="src\modules\authCredentials\Application\interfaces\" />
+    <Folder Include="src\modules\authCredentials\Application\services\" />
+    <Folder Include="src\modules\authCredentials\Application\useCases\" />
+    <Folder Include="src\modules\authCredentials\Domain\" />
+    <Folder Include="src\modules\authCredentials\Domain\aggregate\" />
+    <Folder Include="src\modules\authCredentials\Domain\repositories\" />
+    <Folder Include="src\modules\authCredentials\Domain\valueObject\" />
+    <Folder Include="src\modules\authCredentials\Infrastructure\" />
+    <Folder Include="src\modules\authCredentials\Infrastructure\entity\" />
+    <Folder Include="src\modules\authCredentials\Infrastructure\repository\" />
+    <Folder Include="src\modules\authCredentials\UI\" />
     <Folder Include="src\modules\cityOrMunicipality\" />
     <Folder Include="src\modules\cityOrMunicipality\Application\" />
     <Folder Include="src\modules\cityOrMunicipality\Application\interfaces\" />

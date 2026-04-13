@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.authCredentials.Infrastructure.entity;
 using derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity;
 using derTransporte.src.modules.customers.Infrastructure.entity;
 using derTransporte.src.modules.drivers.Infrastructure.entity;
@@ -27,6 +28,6 @@ public class PersonEntity
         // Hijos directos
         public DriverEntity? Driver { get; set; }
         public CustomerEntity? Customer { get; set; }
-       // public AuthCredentialEntity AuthCredential { get; set; }
+        public AuthCredentialEntity? AuthCredential { get; set; }
 
 }
