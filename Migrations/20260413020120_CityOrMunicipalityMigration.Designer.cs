@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using derTransporte.src.shared.context;
 
@@ -11,9 +12,11 @@ using derTransporte.src.shared.context;
 namespace derTransporte.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260413020120_CityOrMunicipalityMigration")]
+    partial class CityOrMunicipalityMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,6 +45,9 @@ namespace derTransporte.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("varchar(60)");
 
+                    b.Property<Guid?>("StateOrRegionsEntityId")
+                        .HasColumnType("char(36)");
+
                     b.Property<Guid>("StateRegId")
                         .HasColumnType("char(36)")
                         .HasColumnName("stateRegId");
@@ -50,6 +56,8 @@ namespace derTransporte.Migrations
 
                     b.HasIndex("Code")
                         .IsUnique();
+
+                    b.HasIndex("StateOrRegionsEntityId");
 
                     b.HasIndex("StateRegId");
 
@@ -111,8 +119,12 @@ namespace derTransporte.Migrations
 
             modelBuilder.Entity("derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity.CityOrMunicipalityEntity", b =>
                 {
-                    b.HasOne("derTransporte.src.modules.stateOrRegions.Infrastructure.entity.StateOrRegionsEntity", "StateOrRegion")
+                    b.HasOne("derTransporte.src.modules.stateOrRegions.Infrastructure.entity.StateOrRegionsEntity", null)
                         .WithMany("CitiesOrMunicipalities")
+                        .HasForeignKey("StateOrRegionsEntityId");
+
+                    b.HasOne("derTransporte.src.modules.stateOrRegions.Infrastructure.entity.StateOrRegionsEntity", "StateOrRegion")
+                        .WithMany()
                         .HasForeignKey("StateRegId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

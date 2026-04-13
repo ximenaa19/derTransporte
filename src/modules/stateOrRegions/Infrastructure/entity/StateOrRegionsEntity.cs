@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity;
 using derTransporte.src.modules.countries.Infrastructure.entity;
 
 namespace derTransporte.src.modules.stateOrRegions.Infrastructure.entity;
@@ -12,6 +13,6 @@ public class StateOrRegionsEntity
  
         // Navigation properties
         public CountriesEntity? Country { get; set; }
-        //public ICollection<CityOrMunicipalityEntity> CitiesOrMunicipalities { get; set; }
+        public ICollection<CityOrMunicipalityEntity> CitiesOrMunicipalities { get; set; } = new List<CityOrMunicipalityEntity>();
 
 }

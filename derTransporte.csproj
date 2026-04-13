@@ -8,6 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="src\modules\cityOrMunicipality\" />
+    <Folder Include="src\modules\cityOrMunicipality\Application\" />
+    <Folder Include="src\modules\cityOrMunicipality\Application\interfaces\" />
+    <Folder Include="src\modules\cityOrMunicipality\Application\services\" />
+    <Folder Include="src\modules\cityOrMunicipality\Application\useCases\" />
+    <Folder Include="src\modules\cityOrMunicipality\Domain\" />
+    <Folder Include="src\modules\cityOrMunicipality\Domain\aggregate\" />
+    <Folder Include="src\modules\cityOrMunicipality\Domain\repositories\" />
+    <Folder Include="src\modules\cityOrMunicipality\Domain\valueObject\" />
+    <Folder Include="src\modules\cityOrMunicipality\Infrastructure\" />
+    <Folder Include="src\modules\cityOrMunicipality\Infrastructure\entity\" />
+    <Folder Include="src\modules\cityOrMunicipality\Infrastructure\repository\" />
+    <Folder Include="src\modules\cityOrMunicipality\UI\" />
     <Folder Include="src\modules\countries\" />
     <Folder Include="src\modules\countries\Application\" />
     <Folder Include="src\modules\countries\Application\intefaces\" />
