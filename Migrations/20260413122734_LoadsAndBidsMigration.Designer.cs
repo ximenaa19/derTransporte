@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using derTransporte.src.shared.context;
 
@@ -11,9 +12,11 @@ using derTransporte.src.shared.context;
 namespace derTransporte.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260413122734_LoadsAndBidsMigration")]
+    partial class LoadsAndBidsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -228,7 +231,7 @@ namespace derTransporte.Migrations
 
                     b.Property<string>("DestinationCoords")
                         .IsRequired()
-                        .HasColumnType("VARCHAR(50)");
+                        .HasColumnType("VARCHAR");
 
                     b.Property<decimal>("OfferedPrice")
                         .HasColumnType("DECIMAL");
@@ -242,7 +245,7 @@ namespace derTransporte.Migrations
 
                     b.Property<string>("OriginCoords")
                         .IsRequired()
-                        .HasColumnType("VARCHAR(50)");
+                        .HasColumnType("VARCHAR");
 
                     b.Property<DateTime>("PickupDate")
                         .HasColumnType("TIMESTAMP");

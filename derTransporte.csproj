@@ -21,6 +21,13 @@
     <Folder Include="src\modules\authCredentials\Infrastructure\entity\" />
     <Folder Include="src\modules\authCredentials\Infrastructure\repository\" />
     <Folder Include="src\modules\authCredentials\UI\" />
+    <Folder Include="src\modules\bids\" />
+    <Folder Include="src\modules\bids\Application\" />
+    <Folder Include="src\modules\bids\Domain\" />
+    <Folder Include="src\modules\bids\Infrastructure\" />
+    <Folder Include="src\modules\bids\Infrastructure\entity\" />
+    <Folder Include="src\modules\bids\Infrastructure\repository\" />
+    <Folder Include="src\modules\bids\UI\" />
     <Folder Include="src\modules\cityOrMunicipality\" />
     <Folder Include="src\modules\cityOrMunicipality\Application\" />
     <Folder Include="src\modules\cityOrMunicipality\Application\interfaces\" />

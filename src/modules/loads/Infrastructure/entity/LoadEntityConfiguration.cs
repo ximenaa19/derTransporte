@@ -14,8 +14,8 @@ public class LoadEntityConfiguration : IEntityTypeConfiguration<LoadEntity>
  
             builder.Property(x => x.OriginAddress).HasColumnType("TEXT");
             builder.Property(x => x.DestinationAddress).HasColumnType("TEXT");
-            builder.Property(x => x.OriginCoords).HasColumnType("VARCHAR");
-            builder.Property(x => x.DestinationCoords).HasColumnType("VARCHAR");
+            builder.Property(x => x.OriginCoords).HasColumnType("VARCHAR(50)");
+            builder.Property(x => x.DestinationCoords).HasColumnType("VARCHAR(50)");
             builder.Property(x => x.WeightTons).HasColumnType("DECIMAL");
             builder.Property(x => x.VolumeM3).HasColumnType("DECIMAL");
             builder.Property(x => x.PickupDate).HasColumnType("TIMESTAMP");
