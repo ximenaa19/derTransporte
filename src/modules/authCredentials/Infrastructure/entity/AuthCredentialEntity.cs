@@ -18,3 +18,4 @@ public class AuthCredentialEntity
         public PersonEntity? Person { get; set; }
 
 }
+
