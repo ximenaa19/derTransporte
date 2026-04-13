@@ -30,9 +30,9 @@ public class CountriesEntityConfiguration : IEntityTypeConfiguration<CountriesEn
                    .IsUnique();
  
             // Relación: un country tiene muchos states
-            /*builder.HasMany(x => x.statesOrRegions)
+            builder.HasMany(x => x.statesOrRegions)
                    .WithOne(x => x.Country)
-                   .HasForeignKey(x => x.CountryId);*/
+                   .HasForeignKey(x => x.CountryId);
         }
 
 }
