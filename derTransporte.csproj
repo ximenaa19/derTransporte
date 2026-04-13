@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="src\modules\auditLog\Application\" />
+    <Folder Include="src\modules\auditLog\Domain\" />
+    <Folder Include="src\modules\auditLog\Infrastructure\" />
+    <Folder Include="src\modules\auditLog\Infrastructure\entity\" />
+    <Folder Include="src\modules\auditLog\Infrastructure\repository\" />
+    <Folder Include="src\modules\auditLog\UI\" />
+    <Folder Include="src\modules\authSessions\" />
+    <Folder Include="src\modules\authSessions\Application\" />
+    <Folder Include="src\modules\authSessions\Domain\" />
+    <Folder Include="src\modules\authSessions\UI\" />
     <Folder Include="src\modules\authCredentials\" />
     <Folder Include="src\modules\authCredentials\Application\" />
     <Folder Include="src\modules\authCredentials\Application\interfaces\" />
@@ -21,6 +31,7 @@
     <Folder Include="src\modules\authCredentials\Infrastructure\entity\" />
     <Folder Include="src\modules\authCredentials\Infrastructure\repository\" />
     <Folder Include="src\modules\authCredentials\UI\" />
+    <Folder Include="src\modules\auditLog\" />
     <Folder Include="src\modules\bids\" />
     <Folder Include="src\modules\bids\Application\" />
     <Folder Include="src\modules\bids\Domain\" />
@@ -48,6 +59,10 @@
     <Folder Include="src\modules\cityOrMunicipality\Infrastructure\entity\" />
     <Folder Include="src\modules\cityOrMunicipality\Infrastructure\repository\" />
     <Folder Include="src\modules\cityOrMunicipality\UI\" />
+    <Folder Include="src\modules\companyDocuments\" />
+    <Folder Include="src\modules\companyDocuments\Application\" />
+    <Folder Include="src\modules\companyDocuments\Domain\" />
+    <Folder Include="src\modules\companyDocuments\UI\" />
     <Folder Include="src\modules\countries\" />
     <Folder Include="src\modules\countries\Application\" />
     <Folder Include="src\modules\countries\Application\intefaces\" />
@@ -82,6 +97,27 @@
     <Folder Include="src\modules\disputes\Domain\" />
     <Folder Include="src\modules\disputes\Infrastructure\repository\" />
     <Folder Include="src\modules\disputes\UI\" />
+    <Folder Include="src\modules\documentCustomers\" />
+    <Folder Include="src\modules\documentCustomers\Application\" />
+    <Folder Include="src\modules\documentCustomers\Domain\" />
+    <Folder Include="src\modules\documentCustomers\Infrastructure\" />
+    <Folder Include="src\modules\documentCustomers\Infrastructure\entity\" />
+    <Folder Include="src\modules\documentCustomers\Infrastructure\repository\" />
+    <Folder Include="src\modules\documentCustomers\UI\" />
+    <Folder Include="src\modules\documentDrivers\" />
+    <Folder Include="src\modules\documentDrivers\Application\" />
+    <Folder Include="src\modules\documentDrivers\Domain\" />
+    <Folder Include="src\modules\documentDrivers\Infrastructure\" />
+    <Folder Include="src\modules\documentDrivers\Infrastructure\entity\" />
+    <Folder Include="src\modules\documentDrivers\Infrastructure\repository\" />
+    <Folder Include="src\modules\documentDrivers\UI\" />
+    <Folder Include="src\modules\documentVehicles\" />
+    <Folder Include="src\modules\documentVehicles\Application\" />
+    <Folder Include="src\modules\documentVehicles\Domain\" />
+    <Folder Include="src\modules\documentVehicles\Infrastructure\" />
+    <Folder Include="src\modules\documentVehicles\Infrastructure\entity\" />
+    <Folder Include="src\modules\documentVehicles\Infrastructure\repository\" />
+    <Folder Include="src\modules\documentVehicles\UI\" />
     <Folder Include="src\modules\drivers\" />
     <Folder Include="src\modules\drivers\Application\" />
     <Folder Include="src\modules\drivers\Application\interfaces\" />

@@ -19,6 +19,12 @@ using derTransporte.src.modules.chatRoom.Infrastructure.entity;
 using derTransporte.src.modules.disputes.Infrastructure.entity;
 using derTransporte.src.modules.ratings.Infrastructure.entity;
 using derTransporte.src.modules.notifications.Infrastructure.entity;
+using derTransporte.src.modules.authSessions.Infrastructure.entity;
+using derTransporte.src.modules.auditLog.Infrastructure.entity;
+using derTransporte.src.modules.companyDocuments.Infrastructure.entity;
+using derTransporte.src.modules.documentCustomers.Infrastructure.entity;
+using derTransporte.src.modules.documentDrivers.Infrastructure.entity;
+using derTransporte.src.modules.documentVehicles.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -46,6 +52,12 @@ public class AppDbContext : DbContext
     
     public DbSet<RatingEntity> Rating { get; set; } = null!;
     public DbSet<NotificationEntity> Notification { get; set; } = null!;
+    public DbSet<AuthSessionEntity> AuthSession { get; set; } = null!;
+    public DbSet<AuditLogEntity> AuditLog { get; set; } = null!;
+    public DbSet<CompanyDocumentEntity> CompanyDocument { get; set; } = null!;
+    public DbSet<DocumentCustomerEntity> DocumentCustomer { get; set; } = null!;
+    public DbSet<DocumentDriverEntity> DocumentDriver { get; set; } = null!;
+    public DbSet<DocumentVehicleEntity> DocumentVehicle { get; set; } = null!;
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

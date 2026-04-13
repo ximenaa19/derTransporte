@@ -1,6 +1,7 @@
 
 using System;
 using derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity;
+using derTransporte.src.modules.companyDocuments.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
 
 namespace derTransporte.src.modules.transportCompanies.Infrastructure.entity;
@@ -27,9 +28,9 @@ public class transportCompanyEntity
         public PersonEntity? LegalRepresentative { get; set; }
  
         // Hijos
-      /*  public ICollection<CompanyVehicleEntity> CompanyVehicles { get; set; }
-        public ICollection<CompanyDocumentEntity> Documents { get; set; }
-        public ICollection<PersonTransportEntity> PersonTransports { get; set; }*/
+      //  public ICollection<CompanyVehicleEntity> CompanyVehicles { get; set; }
+        public ICollection<CompanyDocumentEntity> Documents { get; set; } = new List<CompanyDocumentEntity>();
+        //public ICollection<PersonTransportEntity> PersonTransports { get; set; }
 
 
 }

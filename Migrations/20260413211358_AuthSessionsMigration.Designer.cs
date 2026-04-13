@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using derTransporte.src.shared.context;
 
@@ -11,9 +12,11 @@ using derTransporte.src.shared.context;
 namespace derTransporte.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260413211358_AuthSessionsMigration")]
+    partial class AuthSessionsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -242,35 +245,6 @@ namespace derTransporte.Migrations
                     b.ToTable("cityOrMunicipality", (string)null);
                 });
 
-            modelBuilder.Entity("derTransporte.src.modules.companyDocuments.Infrastructure.entity.CompanyDocumentEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("CompanyId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("DocumentStatusId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("DATE");
-
-                    b.Property<string>("FileUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("TypeDocumentId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
-
-                    b.ToTable("company_documents", (string)null);
-                });
-
             modelBuilder.Entity("derTransporte.src.modules.countries.Infrastructure.entity.CountriesEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -380,105 +354,6 @@ namespace derTransporte.Migrations
                     b.HasIndex("TripId");
 
                     b.ToTable("disputes", (string)null);
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.documentCustomers.Infrastructure.entity.DocumentCustomerEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("DocumentNumber")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)");
-
-                    b.Property<Guid>("DocumentStatusId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("FileUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("TypeDocumentId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("documents_customers", (string)null);
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.documentDrivers.Infrastructure.entity.DocumentDriverEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("DocumentNumber")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)");
-
-                    b.Property<Guid>("DocumentStatusId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("DriverId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("DATE");
-
-                    b.Property<string>("FileUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("TypeDocumentId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DriverId");
-
-                    b.ToTable("documents_drivers", (string)null);
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.documentVehicles.Infrastructure.entity.DocumentVehicleEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("DocumentNumber")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)");
-
-                    b.Property<Guid>("DocumentStatusId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("DATE");
-
-                    b.Property<string>("FileUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("ReviewedAt")
-                        .HasColumnType("DATETIME");
-
-                    b.Property<Guid>("TypeDocumentId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("VehicleId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("VehicleId");
-
-                    b.ToTable("documents_vehicles", (string)null);
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.drivers.Infrastructure.entity.DriverEntity", b =>
@@ -1024,17 +899,6 @@ namespace derTransporte.Migrations
                     b.Navigation("StateOrRegion");
                 });
 
-            modelBuilder.Entity("derTransporte.src.modules.companyDocuments.Infrastructure.entity.CompanyDocumentEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.transportCompanies.Infrastructure.entity.transportCompanyEntity", "Company")
-                        .WithMany("Documents")
-                        .HasForeignKey("CompanyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Company");
-                });
-
             modelBuilder.Entity("derTransporte.src.modules.creditWallet.Infrastructure.entity.CreditWalletEntity", b =>
                 {
                     b.HasOne("derTransporte.src.modules.transportCompanies.Infrastructure.entity.transportCompanyEntity", "Company")
@@ -1082,39 +946,6 @@ namespace derTransporte.Migrations
                     b.Navigation("Creator");
 
                     b.Navigation("Trip");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.documentCustomers.Infrastructure.entity.DocumentCustomerEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.customers.Infrastructure.entity.CustomerEntity", "Customer")
-                        .WithMany("Documents")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.documentDrivers.Infrastructure.entity.DocumentDriverEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.drivers.Infrastructure.entity.DriverEntity", "Driver")
-                        .WithMany("Documents")
-                        .HasForeignKey("DriverId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Driver");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.documentVehicles.Infrastructure.entity.DocumentVehicleEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.vehicles.Infrastructure.entity.VehicleEntity", "Vehicle")
-                        .WithMany("Documents")
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Vehicle");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.drivers.Infrastructure.entity.DriverEntity", b =>
@@ -1304,16 +1135,12 @@ namespace derTransporte.Migrations
 
             modelBuilder.Entity("derTransporte.src.modules.customers.Infrastructure.entity.CustomerEntity", b =>
                 {
-                    b.Navigation("Documents");
-
                     b.Navigation("Loads");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.drivers.Infrastructure.entity.DriverEntity", b =>
                 {
                     b.Navigation("Bids");
-
-                    b.Navigation("Documents");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.loads.Infrastructure.entity.LoadEntity", b =>
@@ -1335,21 +1162,11 @@ namespace derTransporte.Migrations
                     b.Navigation("CitiesOrMunicipalities");
                 });
 
-            modelBuilder.Entity("derTransporte.src.modules.transportCompanies.Infrastructure.entity.transportCompanyEntity", b =>
-                {
-                    b.Navigation("Documents");
-                });
-
             modelBuilder.Entity("derTransporte.src.modules.trips.Infrastructure.entity.TripEntity", b =>
                 {
                     b.Navigation("Disputes");
 
                     b.Navigation("Ratings");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.vehicles.Infrastructure.entity.VehicleEntity", b =>
-                {
-                    b.Navigation("Documents");
                 });
 #pragma warning restore 612, 618
         }

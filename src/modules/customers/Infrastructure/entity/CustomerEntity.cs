@@ -1,5 +1,6 @@
 
 using System;
+using derTransporte.src.modules.documentCustomers.Infrastructure.entity;
 using derTransporte.src.modules.loads.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
 
@@ -16,6 +17,6 @@ public class CustomerEntity
  
         // Hijos
         public ICollection<LoadEntity> Loads { get; set; }= new List<LoadEntity>();
-       // public ICollection<DocumentCustomerEntity> Documents { get; set; }
+        public ICollection<DocumentCustomerEntity> Documents { get; set; } = new List<DocumentCustomerEntity>();
 
 }

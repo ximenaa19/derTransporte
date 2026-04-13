@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.documentVehicles.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
 
 namespace derTransporte.src.modules.vehicles.Infrastructure.entity;
@@ -23,8 +24,8 @@ public class VehicleEntity
         //public VehiclesStatusEntity Status { get; set; }
  
         // Hijos
-       /* public ICollection<DriverVehicleEntity> DriverVehicles { get; set; }
-        public ICollection<CompanyVehicleEntity> CompanyVehicles { get; set; }
-        public ICollection<DocumentVehicleEntity> Documents { get; set; }*/
+        //public ICollection<DriverVehicleEntity> DriverVehicles { get; set; }
+        //public ICollection<CompanyVehicleEntity> CompanyVehicles { get; set; }
+        public ICollection<DocumentVehicleEntity> Documents { get; set; } = new List<DocumentVehicleEntity>();
 
 }
