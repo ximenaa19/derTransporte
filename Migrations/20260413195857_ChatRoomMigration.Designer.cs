@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using derTransporte.src.shared.context;
 
@@ -11,9 +12,11 @@ using derTransporte.src.shared.context;
 namespace derTransporte.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260413195857_ChatRoomMigration")]
+    partial class ChatRoomMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -234,41 +237,6 @@ namespace derTransporte.Migrations
                     b.ToTable("customers", (string)null);
                 });
 
-            modelBuilder.Entity("derTransporte.src.modules.disputes.Infrastructure.entity.DisputeEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("CreatedBy")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("EvidenceUrl")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("ReasonCategoryId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("StatusId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("TripId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("TripId");
-
-                    b.ToTable("disputes", (string)null);
-                });
-
             modelBuilder.Entity("derTransporte.src.modules.drivers.Infrastructure.entity.DriverEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -357,43 +325,6 @@ namespace derTransporte.Migrations
                     b.HasIndex("OriginCityId");
 
                     b.ToTable("loads", (string)null);
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.notifications.Infrastructure.entity.NotificationEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Body")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TIMESTAMP");
-
-                    b.Property<sbyte>("IsRead")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("LinkUrl")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)");
-
-                    b.Property<Guid>("NotificationTypeId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("PersonId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("notifications", (string)null);
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.payments.Infrastructure.entity.PaymentEntity", b =>
@@ -497,42 +428,6 @@ namespace derTransporte.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("plans", (string)null);
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.ratings.Infrastructure.entity.RatingEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TIMESTAMP");
-
-                    b.Property<Guid>("EvaluatedId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("EvaluatorId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<short>("Score")
-                        .HasColumnType("SMALLINT");
-
-                    b.Property<Guid>("TripId")
-                        .HasColumnType("char(36)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EvaluatedId");
-
-                    b.HasIndex("EvaluatorId");
-
-                    b.HasIndex("TripId");
-
-                    b.ToTable("ratings", (string)null);
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.stateOrRegions.Infrastructure.entity.StateOrRegionsEntity", b =>
@@ -820,25 +715,6 @@ namespace derTransporte.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("derTransporte.src.modules.disputes.Infrastructure.entity.DisputeEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Creator")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("derTransporte.src.modules.trips.Infrastructure.entity.TripEntity", "Trip")
-                        .WithMany("Disputes")
-                        .HasForeignKey("TripId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Creator");
-
-                    b.Navigation("Trip");
-                });
-
             modelBuilder.Entity("derTransporte.src.modules.drivers.Infrastructure.entity.DriverEntity", b =>
                 {
                     b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Person")
@@ -879,17 +755,6 @@ namespace derTransporte.Migrations
                     b.Navigation("OriginCity");
                 });
 
-            modelBuilder.Entity("derTransporte.src.modules.notifications.Infrastructure.entity.NotificationEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Person");
-                });
-
             modelBuilder.Entity("derTransporte.src.modules.payments.Infrastructure.entity.PaymentEntity", b =>
                 {
                     b.HasOne("derTransporte.src.modules.creditWallet.Infrastructure.entity.CreditWalletEntity", "Wallet")
@@ -910,35 +775,6 @@ namespace derTransporte.Migrations
                         .IsRequired();
 
                     b.Navigation("City");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.ratings.Infrastructure.entity.RatingEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Evaluated")
-                        .WithMany()
-                        .HasForeignKey("EvaluatedId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_ratings_evaluated");
-
-                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Evaluator")
-                        .WithMany()
-                        .HasForeignKey("EvaluatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_ratings_evaluator");
-
-                    b.HasOne("derTransporte.src.modules.trips.Infrastructure.entity.TripEntity", "Trip")
-                        .WithMany("Ratings")
-                        .HasForeignKey("TripId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Evaluated");
-
-                    b.Navigation("Evaluator");
-
-                    b.Navigation("Trip");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.stateOrRegions.Infrastructure.entity.StateOrRegionsEntity", b =>
@@ -1051,13 +887,6 @@ namespace derTransporte.Migrations
             modelBuilder.Entity("derTransporte.src.modules.stateOrRegions.Infrastructure.entity.StateOrRegionsEntity", b =>
                 {
                     b.Navigation("CitiesOrMunicipalities");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.trips.Infrastructure.entity.TripEntity", b =>
-                {
-                    b.Navigation("Disputes");
-
-                    b.Navigation("Ratings");
                 });
 #pragma warning restore 612, 618
         }

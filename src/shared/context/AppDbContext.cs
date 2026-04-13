@@ -15,6 +15,10 @@ using derTransporte.src.modules.trips.Infrastructure.entity;
 using derTransporte.src.modules.creditWallet.Infrastructure.entity;
 using derTransporte.src.modules.payments.Infrastructure.entity;
 using derTransporte.src.modules.plans.Infrastructure.entity;
+using derTransporte.src.modules.chatRoom.Infrastructure.entity;
+using derTransporte.src.modules.disputes.Infrastructure.entity;
+using derTransporte.src.modules.ratings.Infrastructure.entity;
+using derTransporte.src.modules.notifications.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -36,7 +40,14 @@ public class AppDbContext : DbContext
     public DbSet<CreditWalletEntity> CreditWallet { get; set; } = null!;
     public DbSet<PaymentEntity> Payment { get; set; } = null!;
     public DbSet<PlanEntity> Plan { get; set; } = null!;
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    public DbSet<ChatRoomEntity> ChatRooms { get; set; } = null!;
+    
+    public DbSet<DisputeEntity> Dispute { get; set; } = null!;
+    
+    public DbSet<RatingEntity> Rating { get; set; } = null!;
+    public DbSet<NotificationEntity> Notification { get; set; } = null!;
+    
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using derTransporte.src.shared.context;
 
@@ -11,9 +12,11 @@ using derTransporte.src.shared.context;
 namespace derTransporte.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260413201512_NotificationsMigration")]
+    partial class NotificationsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -357,43 +360,6 @@ namespace derTransporte.Migrations
                     b.HasIndex("OriginCityId");
 
                     b.ToTable("loads", (string)null);
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.notifications.Infrastructure.entity.NotificationEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Body")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TIMESTAMP");
-
-                    b.Property<sbyte>("IsRead")
-                        .HasColumnType("tinyint");
-
-                    b.Property<string>("LinkUrl")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)");
-
-                    b.Property<Guid>("NotificationTypeId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("PersonId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(100)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("notifications", (string)null);
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.payments.Infrastructure.entity.PaymentEntity", b =>
@@ -877,17 +843,6 @@ namespace derTransporte.Migrations
                     b.Navigation("DestinationCity");
 
                     b.Navigation("OriginCity");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.notifications.Infrastructure.entity.NotificationEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.payments.Infrastructure.entity.PaymentEntity", b =>
