@@ -12,6 +12,9 @@ using derTransporte.src.modules.vehicles.Infrastructure.entity;
 using derTransporte.src.modules.loads.Infrastructure.entity;
 using derTransporte.src.modules.bids.Infrastructure.entity;
 using derTransporte.src.modules.trips.Infrastructure.entity;
+using derTransporte.src.modules.creditWallet.Infrastructure.entity;
+using derTransporte.src.modules.payments.Infrastructure.entity;
+using derTransporte.src.modules.plans.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -30,6 +33,9 @@ public class AppDbContext : DbContext
     public DbSet<LoadEntity> Load { get; set; } = null!;
     public DbSet<BidEntity> Bid { get; set; } = null!;
     public DbSet<TripEntity> Trip { get; set; } = null!;
+    public DbSet<CreditWalletEntity> CreditWallet { get; set; } = null!;
+    public DbSet<PaymentEntity> Payment { get; set; } = null!;
+    public DbSet<PlanEntity> Plan { get; set; } = null!;
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }

@@ -54,6 +54,10 @@
     <Folder Include="src\modules\countries\Infrastructure\entity\" />
     <Folder Include="src\modules\countries\Infrastructure\repository\" />
     <Folder Include="src\modules\countries\UI\" />
+    <Folder Include="src\modules\creditWallet\Application\" />
+    <Folder Include="src\modules\creditWallet\Domain\" />
+    <Folder Include="src\modules\creditWallet\Infrastructure\repository\" />
+    <Folder Include="src\modules\creditWallet\UI\" />
     <Folder Include="src\modules\customers\" />
     <Folder Include="src\modules\customers\Application\" />
     <Folder Include="src\modules\customers\Application\interfaces\" />
@@ -86,6 +90,9 @@
     <Folder Include="src\modules\loads\Infrastructure\" />
     <Folder Include="src\modules\loads\Infrastructure\entity\" />
     <Folder Include="src\modules\loads\Infrastructure\repository\" />
+    <Folder Include="src\modules\payments\Application\" />
+    <Folder Include="src\modules\payments\Domain\" />
+    <Folder Include="src\modules\payments\Infrastructure\repository\" />
     <Folder Include="src\modules\persons\" />
     <Folder Include="src\modules\persons\Application\" />
     <Folder Include="src\modules\persons\Application\interfaces\" />
@@ -99,6 +106,13 @@
     <Folder Include="src\modules\persons\Infrastructure\entity\" />
     <Folder Include="src\modules\persons\Infrastructure\repository\" />
     <Folder Include="src\modules\persons\UI\" />
+    <Folder Include="src\modules\plans\" />
+    <Folder Include="src\modules\plans\Application\" />
+    <Folder Include="src\modules\plans\Domain\" />
+    <Folder Include="src\modules\plans\Infrastructure\" />
+    <Folder Include="src\modules\plans\Infrastructure\entity\" />
+    <Folder Include="src\modules\plans\Infrastructure\repository\" />
+    <Folder Include="src\modules\plans\UI\" />
     <Folder Include="src\modules\stateOrRegions\Application\" />
     <Folder Include="src\modules\stateOrRegions\Application\interfaces\" />
     <Folder Include="src\modules\stateOrRegions\Application\services\" />
