@@ -51,6 +51,20 @@ using derTransporte.src.modules.documentCategory.Infrastructure.entity;
 using derTransporte.src.modules.companiesStatus.Infrastructure.entity;
 using derTransporte.src.modules.typeVehicles.Infrastructure.entity;
 using derTransporte.src.modules.vehiclesStatus.Infrastructure.entity;
+using derTransporte.src.modules.documentsStatus.Infrastructure.entity;
+using derTransporte.src.modules.typeLoad.Infrastructure.entity;
+using derTransporte.src.modules.statusBids.Infarstructure.entity;
+using derTransporte.src.modules.assigmentRole.Infrastructure.entity;
+using derTransporte.src.modules.transactionTypes.Infrastructure.entity;
+using derTransporte.src.modules.paymentProviders.Infrastructure.entity;
+using derTransporte.src.modules.paymentStatus.Infrastructure.entity;
+using derTransporte.src.modules.subscriptionType.Infrastructure.entity;
+using derTransporte.src.modules.subscriptionStatus.Infrastructure.entity;
+using derTransporte.src.modules.statusChat.Infrastructure.entity;
+using derTransporte.src.modules.messageType.Infrastructure.entity;
+using derTransporte.src.modules.notificationType.Infrastructure.entity;
+using derTransporte.src.modules.reasonDisputes.Infrastructure.entity;
+using derTransporte.src.modules.disputesStatus.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -110,6 +124,20 @@ public class AppDbContext : DbContext
     public DbSet<CompaniesStatusEntity> CompaniesStatus { get; set; } = null!;
     public DbSet<TypeVehicleEntity> TypeVehicle { get; set; } = null!;
     public DbSet<VehiclesStatusEntity> VehiclesStatus { get; set; } = null!;
+    public DbSet<DocumentsStatusEntity> DocumentsStatus { get; set; } = null!;
+    public DbSet<TypeLoadEntity> TypeLoad { get; set; } = null!;
+    public DbSet<StatusBidEntity> StatusBid { get; set; } = null!;
+    public DbSet<AssigmentRoleEntity> AssigmentRole { get; set; } = null!;
+    public DbSet<TransactionTypeEntity> TransactionType { get; set; } = null!;
+    public DbSet<PaymentProviderEntity> PaymentProvider { get; set; } = null!;
+    public DbSet<PaymentStatusEntity> PaymentStatus { get; set; } = null!;
+    public DbSet<SubscriptionTypeEntity> SubscriptionType { get; set; } = null!;
+    public DbSet<SubscriptionStatusEntity> SubscriptionStatus { get; set; } = null!;
+    public DbSet<StatusChatEntity> StatusChat { get; set; } = null!;
+    public DbSet<MessageTypeEntity> MessageType { get; set; } = null!;
+    public DbSet<NotificationTypeEntity> NotificationType { get; set; } = null!;
+    public DbSet<ReasonDisputeEntity> ReasonDispute { get; set; } = null!;
+    public DbSet<DisputesStatusEntity> DisputesStatus { get; set; } = null!;
     
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
