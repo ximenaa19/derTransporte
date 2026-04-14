@@ -39,6 +39,7 @@
     <Folder Include="src\modules\bids\Infrastructure\entity\" />
     <Folder Include="src\modules\bids\Infrastructure\repository\" />
     <Folder Include="src\modules\bids\UI\" />
+    <Folder Include="src\modules\chatMessages\Infrastructure\repository\" />
     <Folder Include="src\modules\chatRoom\" />
     <Folder Include="src\modules\chatRoom\Application\" />
     <Folder Include="src\modules\chatRoom\Domain\" />
@@ -59,6 +60,10 @@
     <Folder Include="src\modules\cityOrMunicipality\Infrastructure\entity\" />
     <Folder Include="src\modules\cityOrMunicipality\Infrastructure\repository\" />
     <Folder Include="src\modules\cityOrMunicipality\UI\" />
+    <Folder Include="src\modules\cityPricingRules\" />
+    <Folder Include="src\modules\cityPricingRules\Infrastructure\" />
+    <Folder Include="src\modules\cityPricingRules\Infrastructure\entity\" />
+    <Folder Include="src\modules\cityPricingRules\Infrastructure\repository\" />
     <Folder Include="src\modules\companyDocuments\" />
     <Folder Include="src\modules\companyDocuments\Application\" />
     <Folder Include="src\modules\companyDocuments\Domain\" />

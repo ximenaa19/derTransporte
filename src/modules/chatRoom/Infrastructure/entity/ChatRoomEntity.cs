@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.chatMessages.Infrastructure.entity;
 using derTransporte.src.modules.loads.Infrastructure.entity;
 using derTransporte.src.modules.trips.Infrastructure.entity;
 
@@ -18,7 +19,7 @@ public class ChatRoomEntity
         /*public StatusChatEntity? Status { get; set; }
  
         // Hijos
-        public ICollection<ChatParticipantEntity> Participants { get; set; }
-        public ICollection<ChatMessageEntity> Messages { get; set; }*/
+        public ICollection<ChatParticipantEntity> Participants { get; set; }*/
+        public ICollection<ChatMessageEntity> Messages { get; set; } = new List<ChatMessageEntity>();
 
 }

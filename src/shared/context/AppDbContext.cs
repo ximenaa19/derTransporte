@@ -35,6 +35,8 @@ using derTransporte.src.modules.travelScale.Infrastructure.entity;
 using derTransporte.src.modules.creditTransactions.Infrastructure.entity;
 using derTransporte.src.modules.subscriptions.Infrastructure.entity;
 using derTransporte.src.modules.personPlans.Infrastructure.entity;
+using derTransporte.src.modules.chatMessages.Infrastructure.entity;
+using derTransporte.src.modules.cityPricingRules.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -78,6 +80,8 @@ public class AppDbContext : DbContext
     public DbSet<CreditTransactionEntity> CreditTransaction { get; set; } = null!;
     public DbSet<SubscriptionEntity> Subscription { get; set; } = null!;
     public DbSet<PersonPlanEntity> PersonPlan { get; set; } = null!;
+    public DbSet<ChatMessageEntity> ChatMessage { get; set; } = null!;
+    public DbSet<CityPricingRuleEntity> CityPricingRule { get; set; } = null!;
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

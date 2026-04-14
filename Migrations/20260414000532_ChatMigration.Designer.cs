@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using derTransporte.src.shared.context;
 
@@ -11,9 +12,11 @@ using derTransporte.src.shared.context;
 namespace derTransporte.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260414000532_ChatMigration")]
+    partial class ChatMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -274,28 +277,6 @@ namespace derTransporte.Migrations
                     b.HasIndex("StateRegId");
 
                     b.ToTable("cityOrMunicipality", (string)null);
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.cityPricingRules.Infrastructure.entity.CityPricingRuleEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<decimal>("BaseCreditPrice")
-                        .HasColumnType("DECIMAL(10,2)");
-
-                    b.Property<Guid>("CityId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("TINYINT(1)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CityId");
-
-                    b.ToTable("city_pricing_rules", (string)null);
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.companyDocuments.Infrastructure.entity.CompanyDocumentEntity", b =>
@@ -1431,17 +1412,6 @@ namespace derTransporte.Migrations
                         .IsRequired();
 
                     b.Navigation("StateOrRegion");
-                });
-
-            modelBuilder.Entity("derTransporte.src.modules.cityPricingRules.Infrastructure.entity.CityPricingRuleEntity", b =>
-                {
-                    b.HasOne("derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity.CityOrMunicipalityEntity", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("City");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.companyDocuments.Infrastructure.entity.CompanyDocumentEntity", b =>
