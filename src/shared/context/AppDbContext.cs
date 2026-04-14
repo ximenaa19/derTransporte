@@ -43,6 +43,11 @@ using derTransporte.src.modules.personTransport.Infrastructure.entity;
 using derTransporte.src.modules.personRoles.Infrastructure.entity;
 using derTransporte.src.modules.tripAssigments.Infrastructure.entity;
 using derTransporte.src.modules.chatParticipants.Infrastructure.entity;
+using derTransporte.src.modules.personStatus.Infrastructure.entity;
+using derTransporte.src.modules.roles.Infrastructure.entity;
+using derTransporte.src.modules.typeDocuments.Infrastructure.entity;
+using derTransporte.src.modules.relationType.Infrastructure.entity;
+using derTransporte.src.modules.documentCategory.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -94,6 +99,12 @@ public class AppDbContext : DbContext
     public DbSet<PersonRolesEntity> PersonRoles { get; set; } = null!;  
     public DbSet<TripAssigmentsEntity> TripAssigments { get; set; } = null!;
     public DbSet<ChatParticipantEntity> ChatParticipant { get; set; } = null!;
+    public DbSet<PersonStatusEntity> PersonStatus { get; set; } = null!;
+    public DbSet<RoleEntity> Role { get; set; } = null!;
+    public DbSet<TypeDocumentEntity> TypeDocument { get; set; } = null!;
+    public DbSet<RelationTypeEntity> RelationType { get; set; } = null!;
+    public DbSet<DocumentCategoryEntity> DocumentCategory { get; set; } = null!;
+    
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

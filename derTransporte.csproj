@@ -111,6 +111,10 @@
     <Folder Include="src\modules\disputes\Domain\" />
     <Folder Include="src\modules\disputes\Infrastructure\repository\" />
     <Folder Include="src\modules\disputes\UI\" />
+    <Folder Include="src\modules\documentCategory\" />
+    <Folder Include="src\modules\documentCategory\Infrastructure\" />
+    <Folder Include="src\modules\documentCategory\Infrastructure\entity\" />
+    <Folder Include="src\modules\documentCategory\Infrastructure\repository\" />
     <Folder Include="src\modules\documentCustomers\" />
     <Folder Include="src\modules\documentCustomers\Application\" />
     <Folder Include="src\modules\documentCustomers\Domain\" />
@@ -182,6 +186,10 @@
     <Folder Include="src\modules\personRoles\Infrastructure\" />
     <Folder Include="src\modules\personRoles\Infrastructure\entity\" />
     <Folder Include="src\modules\personRoles\Infrastructure\repository\" />
+    <Folder Include="src\modules\personStatus\" />
+    <Folder Include="src\modules\personStatus\Infrastructure\" />
+    <Folder Include="src\modules\personStatus\Infrastructure\entity\" />
+    <Folder Include="src\modules\personStatus\Infrastructure\repository\" />
     <Folder Include="src\modules\persons\" />
     <Folder Include="src\modules\persons\Application\" />
     <Folder Include="src\modules\persons\Application\interfaces\" />
@@ -217,6 +225,14 @@
     <Folder Include="src\modules\ratings\Infrastructure\entity\" />
     <Folder Include="src\modules\ratings\Infrastructure\repository\" />
     <Folder Include="src\modules\ratings\UI\" />
+    <Folder Include="src\modules\relationType\" />
+    <Folder Include="src\modules\relationType\Infrastructure\" />
+    <Folder Include="src\modules\relationType\Infrastructure\entity\" />
+    <Folder Include="src\modules\relationType\Infrastructure\repository\" />
+    <Folder Include="src\modules\roles\" />
+    <Folder Include="src\modules\roles\Infrastructure\" />
+    <Folder Include="src\modules\roles\Infrastructure\entity\" />
+    <Folder Include="src\modules\roles\Infrastructure\repository\" />
     <Folder Include="src\modules\stateOrRegions\Application\" />
     <Folder Include="src\modules\stateOrRegions\Application\interfaces\" />
     <Folder Include="src\modules\stateOrRegions\Application\services\" />
@@ -258,6 +274,7 @@
     <Folder Include="src\modules\trips\Infrastructure\entity\" />
     <Folder Include="src\modules\trips\Infrastructure\repository\" />
     <Folder Include="src\modules\trips\UI\" />
+    <Folder Include="src\modules\typeDocuments\Infrastructure\repository\" />
     <Folder Include="src\modules\vehicles\" />
     <Folder Include="src\modules\vehicles\Application\" />
     <Folder Include="src\modules\vehicles\Application\interfaces\" />
