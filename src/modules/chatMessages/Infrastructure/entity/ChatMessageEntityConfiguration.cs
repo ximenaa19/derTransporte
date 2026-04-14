@@ -30,9 +30,9 @@ public class ChatMessageEntityConfiguration: IEntityTypeConfiguration<ChatMessag
                    .WithMany()
                    .HasForeignKey(x => x.SenderId);
  
-            /*builder.HasOne(x => x.MessageType)
+            builder.HasOne(x => x.MessageType)
                    .WithMany()
-                   .HasForeignKey(x => x.MessageTypeId);*/
+                   .HasForeignKey(x => x.MessageTypeId);
         }
 
 }

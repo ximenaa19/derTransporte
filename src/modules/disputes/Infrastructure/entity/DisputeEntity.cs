@@ -1,5 +1,7 @@
 using System;
+using derTransporte.src.modules.disputesStatus.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
+using derTransporte.src.modules.reasonDisputes.Infrastructure.entity;
 using derTransporte.src.modules.trips.Infrastructure.entity;
 
 namespace derTransporte.src.modules.disputes.Infrastructure.entity;
@@ -20,7 +22,7 @@ public class DisputeEntity
         /// Gets or sets the person who created the dispute.
         /// </summary>
         public PersonEntity? Creator { get; set; }
-        //public ReasonDisputeEntity? ReasonCategory { get; set; }
-        //public DisputesStatusEntity? Status { get; set; }
+        public ReasonDisputeEntity? ReasonCategory { get; set; }
+        public DisputesStatusEntity? Status { get; set; }
 
 }

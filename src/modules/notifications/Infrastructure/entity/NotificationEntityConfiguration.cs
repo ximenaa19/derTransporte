@@ -22,9 +22,9 @@ public class NotificationEntityConfiguration: IEntityTypeConfiguration<Notificat
                    .WithMany()
                    .HasForeignKey(x => x.PersonId);
  
-            /*builder.HasOne(x => x.NotificationType)
+            builder.HasOne(x => x.NotificationType)
                    .WithMany()
-                   .HasForeignKey(x => x.NotificationTypeId);*/
+                   .HasForeignKey(x => x.NotificationTypeId);
         }
 
 }

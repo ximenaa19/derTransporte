@@ -3,6 +3,8 @@ using derTransporte.src.modules.companyVehicles.Infrastructure.entity;
 using derTransporte.src.modules.documentVehicles.Infrastructure.entity;
 using derTransporte.src.modules.driversVehicles.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
+using derTransporte.src.modules.typeVehicles.Infrastructure.entity;
+using derTransporte.src.modules.vehiclesStatus.Infrastructure.entity;
 
 namespace derTransporte.src.modules.vehicles.Infrastructure.entity;
 
@@ -21,9 +23,9 @@ public class VehicleEntity
         public Guid StatusId { get; set; }               // FK → vehicules_status
  
         // Navigation properties
-        //public TypeVehicleEntity TypeVehicle { get; set; }
+        public TypeVehicleEntity? TypeVehicle { get; set; }
         public PersonEntity? Owner { get; set; }
-        //public VehiclesStatusEntity Status { get; set; }
+        public VehiclesStatusEntity? Status { get; set; }
  
         // Hijos
         public ICollection<DriverVehicleEntity> DriverVehicles { get; set; } = new List<DriverVehicleEntity>();

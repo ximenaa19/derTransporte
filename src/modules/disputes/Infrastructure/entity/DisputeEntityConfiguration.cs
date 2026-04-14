@@ -23,13 +23,13 @@ public class DisputeEntityConfiguration : IEntityTypeConfiguration<DisputeEntity
                    .WithMany()
                    .HasForeignKey(x => x.CreatedBy);
  
-            /*builder.HasOne(x => x.ReasonCategory)
+            builder.HasOne(x => x.ReasonCategory)
                    .WithMany()
                    .HasForeignKey(x => x.ReasonCategoryId);
  
             builder.HasOne(x => x.Status)
                    .WithMany()
-                   .HasForeignKey(x => x.StatusId);*/
+                   .HasForeignKey(x => x.StatusId);
         }
 
 }

@@ -20,13 +20,13 @@ public class SubscriptionEntityConfiguration: IEntityTypeConfiguration<Subscript
                    .WithMany()
                    .HasForeignKey(x => x.PersonId);
  
-            /*builder.HasOne(x => x.SubscriptionType)
+            builder.HasOne(x => x.SubscriptionType)
                    .WithMany()
                    .HasForeignKey(x => x.SubscriptionTypeId);
  
             builder.HasOne(x => x.Status)
                    .WithMany()
-                   .HasForeignKey(x => x.StatusId);*/
+                   .HasForeignKey(x => x.StatusId);
  
             builder.HasOne(x => x.Payment)
                    .WithMany()

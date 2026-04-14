@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.notificationType.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
 
 namespace derTransporte.src.modules.notifications.Infrastructure.entity;
@@ -16,6 +17,6 @@ public class NotificationEntity
  
         // Navigation properties
         public PersonEntity? Person { get; set; }
-        //public NotificationTypeEntity NotificationType { get; set; }
+        public NotificationTypeEntity? NotificationType { get; set; }
 
 }

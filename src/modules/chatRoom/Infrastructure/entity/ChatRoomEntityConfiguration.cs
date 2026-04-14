@@ -22,9 +22,9 @@ public class ChatRoomEntityConfiguration : IEntityTypeConfiguration<ChatRoomEnti
                    .WithMany()
                    .HasForeignKey(x => x.TripId);
  
-            /*builder.HasOne(x => x.Status)
+            builder.HasOne(x => x.Status)
                    .WithMany()
-                   .HasForeignKey(x => x.StatusId);*/
+                   .HasForeignKey(x => x.StatusId);
         }
 
 }

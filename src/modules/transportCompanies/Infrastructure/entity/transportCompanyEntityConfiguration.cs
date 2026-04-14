@@ -31,9 +31,9 @@ public class transportCompanyEntityConfiguration: IEntityTypeConfiguration<trans
                    .WithMany()
                    .HasForeignKey(x => x.CityId);
  
-            /*builder.HasOne(x => x.Status)
+            builder.HasOne(x => x.Status)
                    .WithMany()
-                   .HasForeignKey(x => x.StatusId);*/
+                   .HasForeignKey(x => x.StatusId);
  
             builder.HasOne(x => x.LegalRepresentative)
                    .WithMany()

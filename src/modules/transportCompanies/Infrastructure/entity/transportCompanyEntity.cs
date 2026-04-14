@@ -1,6 +1,7 @@
 
 using System;
 using derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity;
+using derTransporte.src.modules.companiesStatus.Infrastructure.entity;
 using derTransporte.src.modules.companyDocuments.Infrastructure.entity;
 using derTransporte.src.modules.companyVehicles.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
@@ -26,7 +27,7 @@ public class transportCompanyEntity
  
         // Navigation properties
         public CityOrMunicipalityEntity? City { get; set; }
-        //public CompaniesStatusEntity Status { get; set; }
+        public CompaniesStatusEntity? Status { get; set; }
         public PersonEntity? LegalRepresentative { get; set; }
  
         // Hijos

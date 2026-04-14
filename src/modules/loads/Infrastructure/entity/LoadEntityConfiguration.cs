@@ -1,4 +1,5 @@
 using System;
+using derTransporte.src.modules.loadDetails.Infrastructure.entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -27,9 +28,9 @@ public class LoadEntityConfiguration : IEntityTypeConfiguration<LoadEntity>
                    .WithMany(x => x.Loads)
                    .HasForeignKey(x => x.CustomerId);
  
-            /*builder.HasOne(x => x.TypeLoad)
+            builder.HasOne(x => x.TypeLoad)
                    .WithMany()
-                   .HasForeignKey(x => x.TypeLoadId);*/
+                   .HasForeignKey(x => x.TypeLoadId);
  
             // Dos FK a la misma tabla cities → hay que nombrar las columnas explícitamente
             builder.HasOne(x => x.OriginCity)
@@ -43,9 +44,9 @@ public class LoadEntityConfiguration : IEntityTypeConfiguration<LoadEntity>
                    .HasConstraintName("FK_loads_destination_city");
  
             // Relación 1:1 con load_details
-            /*builder.HasOne(x => x.LoadDetails)
+            builder.HasOne(x => x.LoadDetails)
                    .WithOne(x => x.Load)
-                   .HasForeignKey<LoadDetailsEntity>(x => x.LoadId);*/
+                   .HasForeignKey<LoadDetailsEntity>(x => x.LoadId);
         }
 
 }

@@ -1,6 +1,8 @@
 using System;
 using derTransporte.src.modules.payments.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
+using derTransporte.src.modules.subscriptionStatus.Infrastructure.entity;
+using derTransporte.src.modules.subscriptionType.Infrastructure.entity;
 
 namespace derTransporte.src.modules.subscriptions.Infrastructure.entity;
 
@@ -16,8 +18,8 @@ public class SubscriptionEntity
         public Guid PaymentId { get; set; }              // FK → payments
  
         public PersonEntity? Person { get; set; }
-        //public SubscriptionTypeEntity? SubscriptionType { get; set; }
-        //public SubscriptionStatusEntity? Status { get; set; }
+        public SubscriptionTypeEntity? SubscriptionType { get; set; }
+        public SubscriptionStatusEntity? Status { get; set; }
         public PaymentEntity? Payment { get; set; }
 
 }

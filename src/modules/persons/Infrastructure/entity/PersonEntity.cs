@@ -3,6 +3,8 @@ using derTransporte.src.modules.authCredentials.Infrastructure.entity;
 using derTransporte.src.modules.cityOrMunicipality.Infrastructure.entity;
 using derTransporte.src.modules.customers.Infrastructure.entity;
 using derTransporte.src.modules.drivers.Infrastructure.entity;
+using derTransporte.src.modules.personStatus.Infrastructure.entity;
+using derTransporte.src.modules.typeDocuments.Infrastructure.entity;
 
 namespace derTransporte.src.modules.persons.Infrastructure.entity;
 
@@ -22,8 +24,8 @@ public class PersonEntity
  
         // Navigation properties
         public CityOrMunicipalityEntity? City { get; set; }
-       /* public TypeDocumentEntity IdentificationType { get; set; }
-        public PersonStatusEntity PersonStatus { get; set; }*/
+        public TypeDocumentEntity? IdentificationType { get; set; }
+        public PersonStatusEntity? PersonStatus { get; set; }
  
         // Hijos directos
         public DriverEntity? Driver { get; set; }

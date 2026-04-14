@@ -1,5 +1,7 @@
 using System;
 using derTransporte.src.modules.creditWallet.Infrastructure.entity;
+using derTransporte.src.modules.paymentProviders.Infrastructure.entity;
+using derTransporte.src.modules.paymentStatus.Infrastructure.entity;
 
 namespace derTransporte.src.modules.payments.Infrastructure.entity;
 
@@ -15,7 +17,7 @@ public class PaymentEntity
  
         // Navigation properties
         public CreditWalletEntity? Wallet { get; set; }
-        //public PaymentProviderEntity PaymentProvider { get; set; }
-        //public PaymentStatusEntity Status { get; set; }
+        public PaymentProviderEntity? PaymentProvider { get; set; }
+        public PaymentStatusEntity? Status { get; set; }
 
 }

@@ -5,6 +5,7 @@ using derTransporte.src.modules.customers.Infrastructure.entity;
 using derTransporte.src.modules.loadDetails.Infrastructure.entity;
 using derTransporte.src.modules.loadImages.Infrastructure.entity;
 using derTransporte.src.modules.loadStatusHistory.Infrastructure.entity;
+using derTransporte.src.modules.typeLoad.Infrastructure.entity;
 
 namespace derTransporte.src.modules.loads.Infrastructure.entity;
 
@@ -28,7 +29,7 @@ public class LoadEntity
  
         // Navigation properties
         public CustomerEntity? Customer { get; set; }
-        //public TypeLoadEntity TypeLoad { get; set; }
+        public TypeLoadEntity? TypeLoad { get; set; }
         public CityOrMunicipalityEntity? OriginCity { get; set; }
         public CityOrMunicipalityEntity? DestinationCity { get; set; }
  

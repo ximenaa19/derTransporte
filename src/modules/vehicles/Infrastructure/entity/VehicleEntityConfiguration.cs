@@ -24,16 +24,16 @@ public class VehicleEntityConfiguration : IEntityTypeConfiguration<VehicleEntity
             builder.HasIndex(x => x.Plate).IsUnique();
  
             // Relaciones N:1
-            /*builder.HasOne(x => x.TypeVehicle)
+            builder.HasOne(x => x.TypeVehicle)
                    .WithMany()
-                   .HasForeignKey(x => x.TypeVehicleId);*/
+                   .HasForeignKey(x => x.TypeVehicleId);
  
             builder.HasOne(x => x.Owner)
                    .WithMany()
                    .HasForeignKey(x => x.OwnerId);
  
-            /*builder.HasOne(x => x.Status)
+            builder.HasOne(x => x.Status)
                    .WithMany()
-                   .HasForeignKey(x => x.StatusId);*/
+                   .HasForeignKey(x => x.StatusId);
         }
 }

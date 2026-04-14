@@ -20,13 +20,13 @@ public class PaymenEntityConfiguration : IEntityTypeConfiguration<PaymentEntity>
                    .WithMany(x => x.Payments)
                    .HasForeignKey(x => x.WalletId);
  
-           /* builder.HasOne(x => x.PaymentProvider)
+            builder.HasOne(x => x.PaymentProvider)
                    .WithMany()
                    .HasForeignKey(x => x.PaymentProviderId);
  
             builder.HasOne(x => x.Status)
                    .WithMany()
-                   .HasForeignKey(x => x.StatusId);*/
+                   .HasForeignKey(x => x.StatusId);
         }
 
 }

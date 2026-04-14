@@ -31,9 +31,9 @@ public class BidEntityConfiguration : IEntityTypeConfiguration<BidEntity>
                    .WithMany()
                    .HasForeignKey(x => x.VehicleId);
  
-            /*builder.HasOne(x => x.StatusBid)
+            builder.HasOne(x => x.StatusBids)
                    .WithMany()
-                   .HasForeignKey(x => x.StatusBidsId);*/
+                   .HasForeignKey(x => x.StatusBidsId);
         }
 
 }

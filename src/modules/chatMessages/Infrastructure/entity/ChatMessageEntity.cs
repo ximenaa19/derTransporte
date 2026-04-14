@@ -1,5 +1,6 @@
 using System;
 using derTransporte.src.modules.chatRoom.Infrastructure.entity;
+using derTransporte.src.modules.messageType.Infrastructure.entity;
 using derTransporte.src.modules.persons.Infrastructure.entity;
 
 namespace derTransporte.src.modules.chatMessages.Infrastructure.entity;
@@ -16,6 +17,6 @@ public class ChatMessageEntity
  
         public ChatRoomEntity? ChatRoom { get; set; }
         public PersonEntity? Sender { get; set; }
-        //public MessageTypeEntity MessageType { get; set; }
+        public MessageTypeEntity? MessageType { get; set; }
 
 }

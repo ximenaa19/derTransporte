@@ -1,4 +1,7 @@
 using System;
+using derTransporte.src.modules.authCredentials.Infrastructure.entity;
+using derTransporte.src.modules.customers.Infrastructure.entity;
+using derTransporte.src.modules.drivers.Infrastructure.entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -26,7 +29,7 @@ public class PersonEntityConfiguration : IEntityTypeConfiguration<PersonEntity>
                    .HasForeignKey(x => x.CityId);
  
             // Relación N:1 → tipo de documento de identidad
-            /*builder.HasOne(x => x.IdentificationType)
+            builder.HasOne(x => x.IdentificationType)
                    .WithMany()
                    .HasForeignKey(x => x.IdentificationTypeId);
  
@@ -48,6 +51,6 @@ public class PersonEntityConfiguration : IEntityTypeConfiguration<PersonEntity>
             // Relación 1:1 → una persona tiene credenciales de auth
             builder.HasOne(x => x.AuthCredential)
                    .WithOne(x => x.Person)
-                   .HasForeignKey<AuthCredentialEntity>(x => x.PersonId);*/
+                   .HasForeignKey<AuthCredentialEntity>(x => x.PersonId);
         }
 }
