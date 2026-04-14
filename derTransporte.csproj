@@ -40,6 +40,10 @@
     <Folder Include="src\modules\bids\Infrastructure\repository\" />
     <Folder Include="src\modules\bids\UI\" />
     <Folder Include="src\modules\chatMessages\Infrastructure\repository\" />
+    <Folder Include="src\modules\chatParticipants\" />
+    <Folder Include="src\modules\chatParticipants\Infrastructure\" />
+    <Folder Include="src\modules\chatParticipants\Infrastructure\entity\" />
+    <Folder Include="src\modules\chatParticipants\Infrastructure\repository\" />
     <Folder Include="src\modules\chatRoom\" />
     <Folder Include="src\modules\chatRoom\Application\" />
     <Folder Include="src\modules\chatRoom\Domain\" />
@@ -68,6 +72,10 @@
     <Folder Include="src\modules\companyDocuments\Application\" />
     <Folder Include="src\modules\companyDocuments\Domain\" />
     <Folder Include="src\modules\companyDocuments\UI\" />
+    <Folder Include="src\modules\companyVehicles\" />
+    <Folder Include="src\modules\companyVehicles\Infrastructure\" />
+    <Folder Include="src\modules\companyVehicles\Infrastructure\entity\" />
+    <Folder Include="src\modules\companyVehicles\Infrastructure\repository\" />
     <Folder Include="src\modules\countries\" />
     <Folder Include="src\modules\countries\Application\" />
     <Folder Include="src\modules\countries\Application\intefaces\" />
@@ -124,6 +132,10 @@
     <Folder Include="src\modules\documentVehicles\Infrastructure\entity\" />
     <Folder Include="src\modules\documentVehicles\Infrastructure\repository\" />
     <Folder Include="src\modules\documentVehicles\UI\" />
+    <Folder Include="src\modules\driversVehicles\" />
+    <Folder Include="src\modules\driversVehicles\Infrastructure\" />
+    <Folder Include="src\modules\driversVehicles\Infrastructure\entity\" />
+    <Folder Include="src\modules\driversVehicles\Infrastructure\repository\" />
     <Folder Include="src\modules\drivers\" />
     <Folder Include="src\modules\drivers\Application\" />
     <Folder Include="src\modules\drivers\Application\interfaces\" />
@@ -166,6 +178,10 @@
     <Folder Include="src\modules\personPlans\Infrastructure\" />
     <Folder Include="src\modules\personPlans\Infrastructure\entity\" />
     <Folder Include="src\modules\personPlans\Infrastructure\repository\" />
+    <Folder Include="src\modules\personRoles\" />
+    <Folder Include="src\modules\personRoles\Infrastructure\" />
+    <Folder Include="src\modules\personRoles\Infrastructure\entity\" />
+    <Folder Include="src\modules\personRoles\Infrastructure\repository\" />
     <Folder Include="src\modules\persons\" />
     <Folder Include="src\modules\persons\Application\" />
     <Folder Include="src\modules\persons\Application\interfaces\" />
@@ -179,6 +195,10 @@
     <Folder Include="src\modules\persons\Infrastructure\entity\" />
     <Folder Include="src\modules\persons\Infrastructure\repository\" />
     <Folder Include="src\modules\persons\UI\" />
+    <Folder Include="src\modules\personTransport\" />
+    <Folder Include="src\modules\personTransport\Infrastructure\" />
+    <Folder Include="src\modules\personTransport\Infrastructure\entity\" />
+    <Folder Include="src\modules\personTransport\Infrastructure\repository\" />
     <Folder Include="src\modules\plans\" />
     <Folder Include="src\modules\plans\Application\" />
     <Folder Include="src\modules\plans\Domain\" />
@@ -223,6 +243,10 @@
     <Folder Include="src\modules\transportCompanies\Infrastructure\entity\" />
     <Folder Include="src\modules\transportCompanies\Infrastructure\repository\" />
     <Folder Include="src\modules\transportCompanies\UI\" />
+    <Folder Include="src\modules\tripAssigments\" />
+    <Folder Include="src\modules\tripAssigments\Infrastructure\" />
+    <Folder Include="src\modules\tripAssigments\Infrastructure\entity\" />
+    <Folder Include="src\modules\tripAssigments\Infrastructure\repository\" />
     <Folder Include="src\modules\tripStatusHistory\" />
     <Folder Include="src\modules\tripStatusHistory\Infrastructure\" />
     <Folder Include="src\modules\tripStatusHistory\Infrastructure\entity\" />

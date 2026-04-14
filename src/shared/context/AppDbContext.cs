@@ -37,6 +37,12 @@ using derTransporte.src.modules.subscriptions.Infrastructure.entity;
 using derTransporte.src.modules.personPlans.Infrastructure.entity;
 using derTransporte.src.modules.chatMessages.Infrastructure.entity;
 using derTransporte.src.modules.cityPricingRules.Infrastructure.entity;
+using derTransporte.src.modules.driversVehicles.Infrastructure.entity;
+using derTransporte.src.modules.companyVehicles.Infrastructure.entity;
+using derTransporte.src.modules.personTransport.Infrastructure.entity;
+using derTransporte.src.modules.personRoles.Infrastructure.entity;
+using derTransporte.src.modules.tripAssigments.Infrastructure.entity;
+using derTransporte.src.modules.chatParticipants.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -82,6 +88,12 @@ public class AppDbContext : DbContext
     public DbSet<PersonPlanEntity> PersonPlan { get; set; } = null!;
     public DbSet<ChatMessageEntity> ChatMessage { get; set; } = null!;
     public DbSet<CityPricingRuleEntity> CityPricingRule { get; set; } = null!;
+    public DbSet<DriverVehicleEntity> DriverVehicle { get; set; } = null!;
+    public DbSet<CompanyVehicleEntity> CompanyVehicle { get; set; } = null!;
+    public DbSet<PersonTransportEntity> PersonTransport { get; set; } = null!;  
+    public DbSet<PersonRolesEntity> PersonRoles { get; set; } = null!;  
+    public DbSet<TripAssigmentsEntity> TripAssigments { get; set; } = null!;
+    public DbSet<ChatParticipantEntity> ChatParticipant { get; set; } = null!;
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {

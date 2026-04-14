@@ -215,6 +215,31 @@ namespace derTransporte.Migrations
                     b.ToTable("chat_messages", (string)null);
                 });
 
+            modelBuilder.Entity("derTransporte.src.modules.chatParticipants.Infrastructure.entity.ChatParticipantEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("ChatRoomId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("JoinedAt")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<Guid>("PersonId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.HasIndex("ChatRoomId", "PersonId")
+                        .IsUnique();
+
+                    b.ToTable("chat_participants", (string)null);
+                });
+
             modelBuilder.Entity("derTransporte.src.modules.chatRoom.Infrastructure.entity.ChatRoomEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -325,6 +350,30 @@ namespace derTransporte.Migrations
                     b.HasIndex("CompanyId");
 
                     b.ToTable("company_documents", (string)null);
+                });
+
+            modelBuilder.Entity("derTransporte.src.modules.companyVehicles.Infrastructure.entity.CompanyVehicleEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("TINYINT(1)");
+
+                    b.Property<Guid>("VehicleId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("company_vehicles", (string)null);
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.countries.Infrastructure.entity.CountriesEntity", b =>
@@ -599,6 +648,33 @@ namespace derTransporte.Migrations
                     b.ToTable("drivers", (string)null);
                 });
 
+            modelBuilder.Entity("derTransporte.src.modules.driversVehicles.Infrastructure.entity.DriverVehicleEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("AssignedAt")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<Guid>("DriverId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("IsCurrent")
+                        .HasColumnType("TINYINT(1)");
+
+                    b.Property<Guid>("VehicleId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DriverId");
+
+                    b.HasIndex("VehicleId");
+
+                    b.ToTable("drivers_vehicles", (string)null);
+                });
+
             modelBuilder.Entity("derTransporte.src.modules.loadDetails.Infrastructure.entity.LoadDetailsEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -857,6 +933,56 @@ namespace derTransporte.Migrations
                     b.HasIndex("PlanId");
 
                     b.ToTable("person_plans", (string)null);
+                });
+
+            modelBuilder.Entity("derTransporte.src.modules.personRoles.Infrastructure.entity.PersonRolesEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("PersonId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId", "RoleId")
+                        .IsUnique();
+
+                    b.ToTable("person_roles", (string)null);
+                });
+
+            modelBuilder.Entity("derTransporte.src.modules.personTransport.Infrastructure.entity.PersonTransportEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("CompanyId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("TINYINT(1)");
+
+                    b.Property<DateTime>("JoinedAt")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<Guid>("PersonId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("RelationTypeId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("person_transport", (string)null);
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", b =>
@@ -1198,6 +1324,36 @@ namespace derTransporte.Migrations
                     b.ToTable("travel_scale", (string)null);
                 });
 
+            modelBuilder.Entity("derTransporte.src.modules.tripAssigments.Infrastructure.entity.TripAssigmentsEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("AssignedAt")
+                        .HasColumnType("DATETIME");
+
+                    b.Property<Guid>("AssignmentRoleId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("TINYINT(1)");
+
+                    b.Property<Guid>("PersonId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("TripId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.HasIndex("TripId");
+
+                    b.ToTable("trip_assignments", (string)null);
+                });
+
             modelBuilder.Entity("derTransporte.src.modules.tripStatusHistory.Infrastructure.entity.TripStatusHistoryEntity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1403,6 +1559,25 @@ namespace derTransporte.Migrations
                     b.Navigation("Sender");
                 });
 
+            modelBuilder.Entity("derTransporte.src.modules.chatParticipants.Infrastructure.entity.ChatParticipantEntity", b =>
+                {
+                    b.HasOne("derTransporte.src.modules.chatRoom.Infrastructure.entity.ChatRoomEntity", "ChatRoom")
+                        .WithMany("Participants")
+                        .HasForeignKey("ChatRoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ChatRoom");
+
+                    b.Navigation("Person");
+                });
+
             modelBuilder.Entity("derTransporte.src.modules.chatRoom.Infrastructure.entity.ChatRoomEntity", b =>
                 {
                     b.HasOne("derTransporte.src.modules.loads.Infrastructure.entity.LoadEntity", "Load")
@@ -1453,6 +1628,25 @@ namespace derTransporte.Migrations
                         .IsRequired();
 
                     b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("derTransporte.src.modules.companyVehicles.Infrastructure.entity.CompanyVehicleEntity", b =>
+                {
+                    b.HasOne("derTransporte.src.modules.transportCompanies.Infrastructure.entity.transportCompanyEntity", "Company")
+                        .WithMany("CompanyVehicles")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("derTransporte.src.modules.vehicles.Infrastructure.entity.VehicleEntity", "Vehicle")
+                        .WithMany("CompanyVehicles")
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("Vehicle");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.creditTransactions.Infrastructure.entity.CreditTransactionEntity", b =>
@@ -1557,6 +1751,25 @@ namespace derTransporte.Migrations
                         .IsRequired();
 
                     b.Navigation("Person");
+                });
+
+            modelBuilder.Entity("derTransporte.src.modules.driversVehicles.Infrastructure.entity.DriverVehicleEntity", b =>
+                {
+                    b.HasOne("derTransporte.src.modules.drivers.Infrastructure.entity.DriverEntity", "Driver")
+                        .WithMany("DriverVehicles")
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("derTransporte.src.modules.vehicles.Infrastructure.entity.VehicleEntity", "Vehicle")
+                        .WithMany("DriverVehicles")
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Driver");
+
+                    b.Navigation("Vehicle");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.loadDetails.Infrastructure.entity.LoadDetailsEntity", b =>
@@ -1676,6 +1889,36 @@ namespace derTransporte.Migrations
                     b.Navigation("Person");
 
                     b.Navigation("Plan");
+                });
+
+            modelBuilder.Entity("derTransporte.src.modules.personRoles.Infrastructure.entity.PersonRolesEntity", b =>
+                {
+                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+                });
+
+            modelBuilder.Entity("derTransporte.src.modules.personTransport.Infrastructure.entity.PersonTransportEntity", b =>
+                {
+                    b.HasOne("derTransporte.src.modules.transportCompanies.Infrastructure.entity.transportCompanyEntity", "Company")
+                        .WithMany("PersonTransports")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+
+                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", b =>
@@ -1836,6 +2079,25 @@ namespace derTransporte.Migrations
                     b.Navigation("Trip");
                 });
 
+            modelBuilder.Entity("derTransporte.src.modules.tripAssigments.Infrastructure.entity.TripAssigmentsEntity", b =>
+                {
+                    b.HasOne("derTransporte.src.modules.persons.Infrastructure.entity.PersonEntity", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("derTransporte.src.modules.trips.Infrastructure.entity.TripEntity", "Trip")
+                        .WithMany("Assignments")
+                        .HasForeignKey("TripId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Person");
+
+                    b.Navigation("Trip");
+                });
+
             modelBuilder.Entity("derTransporte.src.modules.tripStatusHistory.Infrastructure.entity.TripStatusHistoryEntity", b =>
                 {
                     b.HasOne("derTransporte.src.modules.trips.Infrastructure.entity.TripEntity", "Trip")
@@ -1893,6 +2155,8 @@ namespace derTransporte.Migrations
             modelBuilder.Entity("derTransporte.src.modules.chatRoom.Infrastructure.entity.ChatRoomEntity", b =>
                 {
                     b.Navigation("Messages");
+
+                    b.Navigation("Participants");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.countries.Infrastructure.entity.CountriesEntity", b =>
@@ -1919,6 +2183,8 @@ namespace derTransporte.Migrations
                     b.Navigation("Bids");
 
                     b.Navigation("Documents");
+
+                    b.Navigation("DriverVehicles");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.loads.Infrastructure.entity.LoadEntity", b =>
@@ -1953,11 +2219,17 @@ namespace derTransporte.Migrations
 
             modelBuilder.Entity("derTransporte.src.modules.transportCompanies.Infrastructure.entity.transportCompanyEntity", b =>
                 {
+                    b.Navigation("CompanyVehicles");
+
                     b.Navigation("Documents");
+
+                    b.Navigation("PersonTransports");
                 });
 
             modelBuilder.Entity("derTransporte.src.modules.trips.Infrastructure.entity.TripEntity", b =>
                 {
+                    b.Navigation("Assignments");
+
                     b.Navigation("Disputes");
 
                     b.Navigation("Ratings");
@@ -1969,7 +2241,11 @@ namespace derTransporte.Migrations
 
             modelBuilder.Entity("derTransporte.src.modules.vehicles.Infrastructure.entity.VehicleEntity", b =>
                 {
+                    b.Navigation("CompanyVehicles");
+
                     b.Navigation("Documents");
+
+                    b.Navigation("DriverVehicles");
                 });
 #pragma warning restore 612, 618
         }

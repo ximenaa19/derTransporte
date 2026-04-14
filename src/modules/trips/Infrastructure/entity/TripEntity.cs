@@ -5,6 +5,7 @@ using derTransporte.src.modules.drivers.Infrastructure.entity;
 using derTransporte.src.modules.loads.Infrastructure.entity;
 using derTransporte.src.modules.ratings.Infrastructure.entity;
 using derTransporte.src.modules.travelScale.Infrastructure.entity;
+using derTransporte.src.modules.tripAssigments.Infrastructure.entity;
 using derTransporte.src.modules.tripStatusHistory.Infrastructure.entity;
 
 namespace derTransporte.src.modules.trips.Infrastructure.entity;
@@ -29,7 +30,7 @@ public class TripEntity
         // Hijos
         public ICollection<TravelScaleEntity> TravelScales { get; set; }= new List<TravelScaleEntity>();
         public ICollection<TripStatusHistoryEntity> StatusHistory { get; set; }= new List<TripStatusHistoryEntity>();
-        //public ICollection<TripAssignmentEntity> Assignments { get; set; }*/
+        public ICollection<TripAssigmentsEntity> Assignments { get; set; }= new List<TripAssigmentsEntity>();
         public ICollection<RatingEntity> Ratings { get; set; }= new List<RatingEntity>();
         public ICollection<DisputeEntity> Disputes { get; set; }=  new List<DisputeEntity>();
 }
