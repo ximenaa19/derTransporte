@@ -48,6 +48,9 @@ using derTransporte.src.modules.roles.Infrastructure.entity;
 using derTransporte.src.modules.typeDocuments.Infrastructure.entity;
 using derTransporte.src.modules.relationType.Infrastructure.entity;
 using derTransporte.src.modules.documentCategory.Infrastructure.entity;
+using derTransporte.src.modules.companiesStatus.Infrastructure.entity;
+using derTransporte.src.modules.typeVehicles.Infrastructure.entity;
+using derTransporte.src.modules.vehiclesStatus.Infrastructure.entity;
 
 namespace derTransporte.src.shared.context;
 
@@ -104,6 +107,9 @@ public class AppDbContext : DbContext
     public DbSet<TypeDocumentEntity> TypeDocument { get; set; } = null!;
     public DbSet<RelationTypeEntity> RelationType { get; set; } = null!;
     public DbSet<DocumentCategoryEntity> DocumentCategory { get; set; } = null!;
+    public DbSet<CompaniesStatusEntity> CompaniesStatus { get; set; } = null!;
+    public DbSet<TypeVehicleEntity> TypeVehicle { get; set; } = null!;
+    public DbSet<VehiclesStatusEntity> VehiclesStatus { get; set; } = null!;
     
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
